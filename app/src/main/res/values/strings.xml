@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movies App</string>
+    <string name="movie_title">Los vengadores</string>
+    <string name="movie_vote_average">Voto promedio: %1$d</string>
 </resources>
