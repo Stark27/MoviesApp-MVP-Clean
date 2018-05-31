@@ -43,7 +43,7 @@ public class MovieAdapterRecyclerView extends RecyclerView.Adapter<MovieAdapterR
                 .placeholder(R.drawable.noimage)
                 .into(holder.pictureCard);
 
-        holder.movieTitleCard.setText(movie.originalTitle);
+        holder.movieTitleCard.setText(movie.title);
         holder.voteAverageCard.setText(String.format(context.getResources().getString(R.string.movie_vote_average), movie.voteAverage.toString()));
         //holder.voteAverageCard.setText(movie.voteAverage.toString());
     }
