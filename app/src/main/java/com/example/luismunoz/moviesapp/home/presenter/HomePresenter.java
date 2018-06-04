@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface HomePresenter {
 
-    void getDataMovies();
+    void getDataPopularMovies();
+    void getDataCarteleraMovies();
+    void getDataUpCommingMovies();
+
     void showDataMovie(List<Movie> movies);
     void showError();
 }

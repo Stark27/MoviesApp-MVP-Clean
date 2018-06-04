@@ -15,7 +15,17 @@ public class HomeInteractorImpl implements HomeInteractor {
     }
 
     @Override
-    public void getDataMovies() {
-        homeRepository.getDataMovies();
+    public void getDataPopularMovies() {
+        homeRepository.getDataPopularMovies();
+    }
+
+    @Override
+    public void getDataCarteleraMovies() {
+        homeRepository.getDataCarteleraMovies();
+    }
+
+    @Override
+    public void getDataUpCommingMovies() {
+        homeRepository.getDataUpCommingMovies();
     }
 }

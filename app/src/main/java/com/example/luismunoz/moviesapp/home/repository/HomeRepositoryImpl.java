@@ -24,7 +24,7 @@ public class HomeRepositoryImpl implements HomeRepository {
     }
 
     @Override
-    public void getDataMovies() {
+    public void getDataPopularMovies() {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Service service = restApiAdapter.getMoviesService();
         Call<MoviesResponse> call = service.getPopularMovies(Constants.API_KEY, "popularity.desc", "es");
@@ -42,5 +42,46 @@ public class HomeRepositoryImpl implements HomeRepository {
             }
         });
 
+    }
+
+    @Override
+    public void getDataCarteleraMovies() {
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Service service = restApiAdapter.getMoviesService();
+        Call<MoviesResponse> call = service.getCarteleraMovies(Constants.API_KEY, "2018-04-30", "2018-05-31", "es");
+
+        call.enqueue(new Callback<MoviesResponse>() {
+            @Override
+            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
+                List<Movie> movieList = response.body().getMovies();
+                homePresenter.showDataMovie(movieList);
+            }
+
+            @Override
+            public void onFailure(Call<MoviesResponse> call, Throwable t) {
+                Log.w("HomeRepositoryImpl", t.toString());
+            }
+        });
+
+    }
+
+    @Override
+    public void getDataUpCommingMovies() {
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Service service = restApiAdapter.getMoviesService();
+        Call<MoviesResponse> call = service.getUpCommingMovies(Constants.API_KEY, "es");
+
+        call.enqueue(new Callback<MoviesResponse>() {
+            @Override
+            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
+                List<Movie> movieList = response.body().getMovies();
+                homePresenter.showDataMovie(movieList);
+            }
+
+            @Override
+            public void onFailure(Call<MoviesResponse> call, Throwable t) {
+                Log.w("HomeRepositoryImpl", t.toString());
+            }
+        });
     }
 }

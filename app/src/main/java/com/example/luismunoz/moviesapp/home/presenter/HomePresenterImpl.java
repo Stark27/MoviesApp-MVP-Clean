@@ -18,8 +18,18 @@ public class HomePresenterImpl implements HomePresenter {
     }
 
     @Override
-    public void getDataMovies() {
-        homeInteractor.getDataMovies();
+    public void getDataPopularMovies() {
+        homeInteractor.getDataPopularMovies();
+    }
+
+    @Override
+    public void getDataCarteleraMovies() {
+        homeInteractor.getDataCarteleraMovies();
+    }
+
+    @Override
+    public void getDataUpCommingMovies() {
+        homeInteractor.getDataUpCommingMovies();
     }
 
     @Override

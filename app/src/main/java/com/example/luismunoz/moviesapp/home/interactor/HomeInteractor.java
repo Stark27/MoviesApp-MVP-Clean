@@ -2,5 +2,7 @@ package com.example.luismunoz.moviesapp.home.interactor;
 
 public interface HomeInteractor {
 
-    void getDataMovies();
+    void getDataPopularMovies();
+    void getDataCarteleraMovies();
+    void getDataUpCommingMovies();
 }

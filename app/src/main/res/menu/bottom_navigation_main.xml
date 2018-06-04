@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_kids"
+        android:id="@+id/action_cartelera"
         android:enabled="true"
-        android:icon="@drawable/children"
-        android:title="@string/kids"
+        android:icon="@drawable/film"
+        android:title="@string/cartelera"
         app:showAsAction="ifRoom"
         />
 
@@ -19,10 +19,10 @@
         />
 
     <item
-        android:id="@+id/favorites"
+        android:id="@+id/action_proximo"
         android:enabled="true"
-        android:icon="@drawable/heart"
-        android:title="@string/favorite"
+        android:icon="@drawable/clock"
+        android:title="@string/proximo"
         app:showAsAction="ifRoom"
         />
 

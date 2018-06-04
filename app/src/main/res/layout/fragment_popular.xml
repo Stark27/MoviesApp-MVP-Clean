@@ -4,16 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.view.HomeActivity"
-    >
+    tools:context=".home.view.HomeActivity">
 
-    <FrameLayout
-        android:id="@+id/home_container"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_home_moviesRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
-
-    <include layout="@layout/bottombar" />
-
+        android:layout_height="match_parent"
+        >
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
