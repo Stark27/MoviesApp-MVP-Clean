@@ -4,8 +4,10 @@ package com.example.luismunoz.moviesapp.home.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +43,7 @@ public class PopularFragment extends Fragment implements HomeActivityView {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_popular, container, false);
+        showToolbar(getResources().getString(R.string.app_name), false, view);
 
         pictureRecyclerView = view.findViewById(R.id.rv_home_moviesRecycler);
 
@@ -69,4 +72,13 @@ public class PopularFragment extends Fragment implements HomeActivityView {
     public void showError(String error) {
 
     }
+
+    @Override
+    public void showToolbar(String title, boolean upBotton, View view) {
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upBotton);
+    }
+
 }

@@ -4,12 +4,12 @@ package com.example.luismunoz.moviesapp.home.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.luismunoz.moviesapp.R;
 import com.example.luismunoz.moviesapp.home.adapter.MovieAdapterRecyclerView;
@@ -41,6 +41,7 @@ public class CarteleraFragment extends Fragment implements HomeActivityView {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cartelera, container, false);
+        showToolbar(getResources().getString(R.string.app_name), false, view);
 
         pictureRecyclerView = view.findViewById(R.id.rv_cartelera_moviesRecycler);
         linearLayoutManager = new LinearLayoutManager(getContext());
@@ -66,5 +67,13 @@ public class CarteleraFragment extends Fragment implements HomeActivityView {
     @Override
     public void showError(String error) {
 
+    }
+
+    @Override
+    public void showToolbar(String title, boolean upBotton, View view) {
+        android.support.v7.widget.Toolbar toolbar = view.findViewById(R.id.toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upBotton);
     }
 }

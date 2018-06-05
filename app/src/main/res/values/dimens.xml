@@ -4,5 +4,12 @@
     <dimen name="padding_left_cardview">16dp</dimen>
     <dimen name="padding_bottom_cardview">8dp</dimen>
     <dimen name="textSize_movieTitle_cardview">24sp</dimen>
+    <dimen name="padding_right_cardview">16dp</dimen>
+    <dimen name="padding_top">16dp</dimen>
+    <dimen name="textSize_detail_reseña">18sp</dimen>
+    <dimen name="textSize_detail_overview">15sp</dimen>
+    <dimen name="padding_left_overview">35dp</dimen>
+    <dimen name="padding_right_overview">35dp</dimen>
+    <dimen name="padding_top_overview">20dp</dimen>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.luismunoz.moviesapp.home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.luismunoz.moviesapp.R;
+import com.example.luismunoz.moviesapp.detail.view.DetailMovieActivity;
 import com.example.luismunoz.moviesapp.home.model.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -35,7 +38,7 @@ public class MovieAdapterRecyclerView extends RecyclerView.Adapter<MovieAdapterR
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
-        Movie movie = movies.get(position);
+        final Movie movie = movies.get(position);
 
         String base_url_image = "https://image.tmdb.org/t/p/w500";
         Picasso.get()
@@ -46,6 +49,15 @@ public class MovieAdapterRecyclerView extends RecyclerView.Adapter<MovieAdapterR
         holder.movieTitleCard.setText(movie.title);
         holder.voteAverageCard.setText(String.format(context.getResources().getString(R.string.movie_vote_average), movie.voteAverage.toString()));
         //holder.voteAverageCard.setText(movie.voteAverage.toString());
+
+        holder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailMovieActivity.class);
+                intent.putExtra("movie_id", movie.getId().toString());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
