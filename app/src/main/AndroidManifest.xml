@@ -18,14 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".detail.view.DetailActivity"
+            android:name=".detail.view.DetailMovieActivity"
             android:parentActivityName=".home.view.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".home.view.HomeActivity" />
+                android:value=".home.view.HomeActivity"
+                />
+
         </activity>
-        <activity android:name=".detail.view.DetailMovieActivity"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.luismunoz.moviesapp.detail.presenter;
 
 import com.example.luismunoz.moviesapp.detail.interactor.DetailMovieInteractor;
 import com.example.luismunoz.moviesapp.detail.interactor.DetailMovieInteractorImpl;
+import com.example.luismunoz.moviesapp.detail.model.MovieData;
 import com.example.luismunoz.moviesapp.detail.view.DetailMovieView;
 
 public class DetailMoviePresenterImpl implements DetailMoviePresenter {
@@ -20,12 +21,14 @@ public class DetailMoviePresenterImpl implements DetailMoviePresenter {
     }
 
     @Override
-    public void showDataMovie() {
-
+    public void showDataMovie(MovieData movieData) {
+        detailMovieView.showData(movieData);
     }
 
     @Override
-    public void showError() {
-
+    public void showError(String error) {
+        detailMovieView.showError(error);
     }
+
+
 }

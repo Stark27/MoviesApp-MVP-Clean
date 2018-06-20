@@ -1,9 +1,11 @@
 package com.example.luismunoz.moviesapp.theMovieDBApi;
 
+import com.example.luismunoz.moviesapp.detail.model.MovieData;
 import com.example.luismunoz.moviesapp.home.model.MoviesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Service {
@@ -22,5 +24,10 @@ public interface Service {
     @GET("movie/upcoming")
     Call<MoviesResponse> getUpCommingMovies(@Query("api_key") String apikey,
                                             @Query("language") String language);
+
+    @GET("movie/{movie_id}")
+    Call<MovieData> getDataMovie(@Path("movie_id") String movie_id,
+                                 @Query("api_key") String api_key,
+                                 @Query("language") String language);
 
 }
